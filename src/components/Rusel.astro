@@ -1,0 +1,59 @@
+---
+import PreviusIcon from "./icons/PreviusIcon.astro";
+import NextIcon from "./icons/NextIcon.astro";
+---
+
+<section>
+    <div class="container">
+        <div class="slide-wrapper">
+            <div class="slider">
+                <img id="slide 1" src="/Rusel/1.webp" alt="..." />
+                <img id="slide 2" src="/Rusel/2.webp" alt="..." />
+                <img id="slide 3" src="/Rusel/3.webp" alt="..." />
+            </div>
+            <div>
+                <button
+                    onclick="document.querySelector('.slider').scrollBy({ left: -300, behavior: 'smooth' })"
+                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                >
+                    <PreviusIcon />
+                </button>
+                <button
+                    onclick="document.querySelector('.slider').scrollBy({ left: 300, behavior: 'smooth' })"
+                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                >
+                    <NextIcon />
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .container {
+        padding: 2rem;
+    }
+    .slide-wrapper {
+        position: relative;
+        max-width: 48rem;
+        margin: 0 auto;
+    }
+    .slider {
+        display: flex;
+        aspect-ratio: 16/9;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+        border-radius: 0.5rem;
+        scrollbar-width: none;
+    }
+    .slider::-webkit-scrollbar {
+        display: none;
+    }
+    .slider img {
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: cover;
+    }
+</style>
