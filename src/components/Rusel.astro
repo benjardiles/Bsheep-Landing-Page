@@ -6,49 +6,60 @@ import NextIcon from "./icons/NextIcon.astro";
 
 <section class="w-full h-[75vh] relative">
     <div class="slide-wrapper w-full h-full">
-        <div class="slider w-full h-full">
-            <img id="slide 1" src="/Rusel/1.webp" alt="..." />
-            <img id="slide 2" src="/Rusel/2.webp" alt="..." />
-            <img id="slide 3" src="/Rusel/3.webp" alt="..." />
-        </div>
-        <button
-            onclick="document.querySelector('.slider').scrollBy({ left: -window.innerWidth, behavior: 'smooth' })"
-            class="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        >
-            <PreviusIcon />
-        </button>
-        <button
-            onclick="document.querySelector('.slider').scrollBy({ left: window.innerWidth, behavior: 'smooth' })"
-            class="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        >
-            <NextIcon />
-        </button>
+      <div class="slider w-full h-full">
+        <img id="slide 1" src="/Rusel/1.webp" alt="..." />
+        <img id="slide 2" src="/Rusel/2.webp" alt="..." />
+        <img id="slide 3" src="/Rusel/3.webp" alt="..." />
+      </div>
+      <button
+        onclick="document.querySelector('.slider').scrollBy({ left: -window.innerWidth, behavior: 'smooth' })"
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      >
+        <PreviusIcon />
+      </button>
+      <button
+        onclick="document.querySelector('.slider').scrollBy({ left: window.innerWidth, behavior: 'smooth' })"
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      >
+        <NextIcon />
+      </button>
     </div>
-</section>
-
-<style>
+  </section>
+  
+  <style>
     .slide-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
+  
     .slider {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-        border-radius: 0.5rem;
-        scrollbar-width: none;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+      scrollbar-width: none;
+      min-height: 90vh;
     }
+  
     .slider::-webkit-scrollbar {
-        display: none;
+      display: none;
     }
+  
     .slider img {
-        flex: 1 0 100%;
-        scroll-snap-align: start;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+      flex: 1 0 100%;
+      scroll-snap-align: start;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
-</style>
+  
+    nav {
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+  
+    nav ul li a {
+      color: white; /* Change text color to white */
+    }
+  </style>
