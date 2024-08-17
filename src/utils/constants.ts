@@ -1,0 +1,86 @@
+export const products = [
+    {
+        id: 1,
+        title: "Producto 1",
+        description: "Descripción del producto 1",
+        price: "$25.00",
+        imageUrl: "/Rusel/1.webp",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 2,
+        title: "Producto 2",
+        description: "Descripción del producto 2",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 3,
+        title: "Producto 3",
+        description: "Descripción del producto 3",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 4,
+        title: "Producto 4",
+        description: "Descripción del producto 4",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 5,
+        title: "Producto 5",
+        description: "Descripción del producto 5",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 6,
+        title: "Producto 6",
+        description: "Descripción del producto 6",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 7,
+        title: "Producto 7",
+        description: "Descripción del producto 7",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 8,
+        title: "Producto 8",
+        description: "Descripción del producto 8",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 9,
+        title: "Producto 9",
+        description: "Descripción del producto 9",
+        price: "$25.00",
+        imageUrl: "/Rusel/11.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    // Otros productos...
+];
+
+export const secciones = [
+    { nombre: "INICIO", url: "/" },
+    { nombre: "PRODUCTOS", url: "/product" },
+    {
+        nombre: "CONTACTO",
+        url: "https://www.instagram.com/bsheep.cl",
+        externo: true,
+    },
+    { nombre: "GUIA DE TALLAS", url: "#" },
+];
