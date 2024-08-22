@@ -1,10 +1,10 @@
 export const products = [
     {
         id: 1,
-        title: "Producto 1",
-        description: "Descripción del producto 1",
-        price: "$25.00",
-        imageUrl: "/Rusel/1.webp",
+        title: "Polera Blanca",
+        description: "Polera manga corta color blanco, hecha de algodón 100%.",
+        price: "$11.990",
+        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
