@@ -1,0 +1,112 @@
+---
+import InstagramIcon from "./icons/Instagram.astro";
+import TwitterIcon from "./icons/Twitter.astro";
+import IconLinkFooter from "./IconLinkFooter.astro";
+
+const { anio } = Astro.props;
+---
+
+<footer class="p-4 bg-white sm:p-6 dark:bg-black">
+    <div class="mx-auto max-w-screen-xl">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a
+                    href="https://www.instagram.com/bsheep.cl/"
+                    class="flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="/LOGO_BLANCO.png"
+                        class="mr-3 h-28"
+                        alt="FlowBite Logo"
+                    />
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 pr-20">
+                <div>
+                    <h2
+                        class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+                    >
+                        Secciones
+                    </h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a
+                                href="https://flowbite.com"
+                                class="hover:underline">Galeria de fotos</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://tailwindcss.com/"
+                                class="hover:underline">Productos</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2
+                        class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+                    >
+                        Productos
+                    </h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a
+                                href="https://github.com/themesberg/flowbite"
+                                class="hover:underline">Poleras</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://discord.gg/4eeurUVvTy"
+                                class="hover:underline">Polerones</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2
+                        class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+                    >
+                        Legal
+                    </h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline"
+                                >Privacy Policy</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline"
+                                >Terms &amp; Conditions</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr
+            class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span
+                class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+                >© {anio}
+                <a
+                    href="https://www.instagram.com/bsheep.cl/"
+                    class="hover:underline">Bsheep™</a
+                >. All Rights Reserved.
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <IconLinkFooter link="https://www.instagram.com/bsheep.cl/">
+                    <InstagramIcon />
+                </IconLinkFooter>
+                <IconLinkFooter link="https://www.instagram.com/bsheep.cl/">
+                    <TwitterIcon />
+                </IconLinkFooter>
+            </div>
+        </div>
+    </div>
+</footer>
