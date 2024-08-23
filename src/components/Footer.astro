@@ -2,8 +2,7 @@
 import InstagramIcon from "./icons/Instagram.astro";
 import TwitterIcon from "./icons/Twitter.astro";
 import IconLinkFooter from "./IconLinkFooter.astro";
-
-const { anio } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="p-4 bg-white sm:p-6 dark:bg-black">
@@ -32,15 +31,13 @@ const { anio } = Astro.props;
                     </h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a
-                                href="https://flowbite.com"
-                                class="hover:underline">Galeria de fotos</a
+                            <a href="/#rusel" class="hover:underline"
+                                >Galeria de fotos</a
                             >
                         </li>
                         <li>
-                            <a
-                                href="https://tailwindcss.com/"
-                                class="hover:underline">Productos</a
+                            <a href="/#products" class="hover:underline"
+                                >Productos</a
                             >
                         </li>
                     </ul>
@@ -53,15 +50,13 @@ const { anio } = Astro.props;
                     </h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a
-                                href="https://github.com/themesberg/flowbite"
-                                class="hover:underline">Poleras</a
+                            <a href="/#t-shirt" class="flex hover:underline"
+                                >Poleras</a
                             >
                         </li>
                         <li>
-                            <a
-                                href="https://discord.gg/4eeurUVvTy"
-                                class="hover:underline">Polerones</a
+                            <a href="#sweatshirt" class="hover:underline"
+                                >Polerones</a
                             >
                         </li>
                     </ul>
@@ -93,18 +88,18 @@ const { anio } = Astro.props;
         <div class="sm:flex sm:items-center sm:justify-between">
             <span
                 class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-                >© {anio}
+                >© {currentYear}
                 <a
                     href="https://www.instagram.com/bsheep.cl/"
                     class="hover:underline">Bsheep™</a
-                >. All Rights Reserved.
+                >. Todos los derechos son reservados.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                 <IconLinkFooter link="https://www.instagram.com/bsheep.cl/">
-                    <InstagramIcon />
+                    <InstagramIcon class="size-8" />
                 </IconLinkFooter>
                 <IconLinkFooter link="https://www.instagram.com/bsheep.cl/">
-                    <TwitterIcon />
+                    <TwitterIcon class="size-8" />
                 </IconLinkFooter>
             </div>
         </div>
