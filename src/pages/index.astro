@@ -2,15 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import ProductGallery from "../components/ProductGallery.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <Layout title="Bsheep">
 	<main>
-		<Header />
+		<Header id="#Carrousel" />
 		<div class="flex w-full h-full">
-			<div class="w-full bg-white m-2">
+			<div class="w-full bg-white m-2" id="products">
 				<ProductGallery />
-			
+			</div>
 		</div>
 	</main>
 </Layout>

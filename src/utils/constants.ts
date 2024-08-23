@@ -12,7 +12,7 @@ export const products = [
         title: "Polera Negra",
         description: "Polera manga corta color negro, hecha de algodon 100%",
         price: "$11.990",
-        imageUrl:  "/FotosPoleras/PoleraNegra.jpg",
+        imageUrl: "/FotosPoleras/PoleraNegra.jpg",
         sizes: ["S", "M", "L"],
     },
     {
@@ -20,7 +20,7 @@ export const products = [
         title: "Poleron Oversize Verde Botella",
         description: "Poleron Oversize 100% algodon ",
         price: "$30.000",
-        imageUrl:  "/FotosPolerones/1.jpg",
+        imageUrl: "/FotosPolerones/1.jpg",
         sizes: ["S", "M", "L"],
     },
     {
@@ -28,7 +28,7 @@ export const products = [
         title: "Poleron Oversize Negro",
         description: "Poleron Oversize 100% algodon ",
         price: "$30.000",
-        imageUrl:  "/FotosPolerones/2.jpg",
+        imageUrl: "/FotosPolerones/2.jpg",
         sizes: ["S", "M", "L"],
     },
     {
@@ -44,7 +44,7 @@ export const products = [
         title: "Producto 5",
         description: "Descripción del producto 5",
         price: "$25.00",
-        imageUrl:  "/FotosPoleras/Foto Polera Blanca.jpg",
+        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
@@ -52,7 +52,7 @@ export const products = [
         title: "Producto 6",
         description: "Descripción del producto 6",
         price: "$25.00",
-        imageUrl:  "/FotosPoleras/Foto Polera Blanca.jpg",
+        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
@@ -60,7 +60,7 @@ export const products = [
         title: "Producto 7",
         description: "Descripción del producto 7",
         price: "$25.00",
-        imageUrl:  "/FotosPoleras/Foto Polera Blanca.jpg",
+        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
@@ -68,7 +68,7 @@ export const products = [
         title: "Producto 8",
         description: "Descripción del producto 8",
         price: "$25.00",
-        imageUrl:  "/FotosPoleras/Foto Polera Blanca.jpg",
+        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
@@ -76,19 +76,19 @@ export const products = [
         title: "Producto 9",
         description: "Descripción del producto 9",
         price: "$25.00",
-        imageUrl:  "/FotosPoleras/Foto Polera Blanca.jpg",
+        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     // Otros productos...
 ];
 
 export const secciones = [
-    { nombre: "INICIO", url: "/" },
-    { nombre: "PRODUCTOS", url: "/product" },
+    { name: "INICIO", url: "/#", label: "Inicio" },
+    { name: "PRODUCTOS", url: "/#products", label: "Productos" },
     {
-        nombre: "CONTACTO",
-        url: "https://www.instagram.com/bsheep.cl",
-        externo: true,
+        name: "CONTACTO",
+        label: "Contacto",
+        url: "mailto:bsheep.cl@gmail.com",
     },
-    { nombre: "GUIA DE TALLAS", url: "#" },
+    { name: "GUIA DE TALLAS", url: "#" },
 ];

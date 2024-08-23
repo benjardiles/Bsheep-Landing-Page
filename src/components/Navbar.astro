@@ -15,7 +15,7 @@ import { secciones } from "../utils/constants";
       class="fixed top-0 w-full bg-transparent z-50 transition-all duration-700 p-1 pr-3"
     >
       <div class="w-full flex flex-wrap items-center justify-between p-15">
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/LOGO_BLANCO.png" class="h-20" alt="Bsheep Logo" />
         </a>
         <button
@@ -47,10 +47,10 @@ import { secciones } from "../utils/constants";
               secciones.map((seccion) => (
                 <li>
                   <a
-                    href="{seccion.url}"
+                    href={seccion.url}
                     class="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:underline"
                   >
-                    {seccion.nombre}
+                    {seccion.name}
                   </a>
                 </li>
               ))
