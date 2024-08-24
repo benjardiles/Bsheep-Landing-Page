@@ -16,7 +16,12 @@ import { secciones } from "../utils/constants";
     >
       <div class="w-full flex flex-wrap items-center justify-between p-15">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/LOGO_BLANCO.png" class="h-20" alt="Bsheep Logo" />
+          <img
+            id="navbar-logo"
+            src="/LOGO_BLANCO.png"
+            class="h-20"
+            alt="Bsheep Logo"
+          />
         </a>
         <button
           data-collapse-toggle="navbar-default"
@@ -54,39 +59,42 @@ import { secciones } from "../utils/constants";
                   </a>
                 </li>
               ))
-            }
+            }); });
           </ul>
         </div>
       </div>
     </nav>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        window.addEventListener("scroll", function () {
-          var navbar = document.getElementById("navbar");
-          if (navbar) {
-            var links = navbar.querySelectorAll("a");
-
-            if (window.scrollY > 0) {
-              // Cambiar estilo cuando se hace scroll
-              navbar.classList.add("bg-white");
-              navbar.classList.remove("bg-transparent");
-              links.forEach((link) => {
-                link.classList.add("text-black");
-                link.classList.remove("text-white");
-              });
-            } else {
-              // Cambiar de vuelta cuando no hay scroll
-              navbar.classList.add("bg-transparent");
-              navbar.classList.remove("bg-white");
-              links.forEach((link) => {
-                link.classList.add("text-white");
-                link.classList.remove("text-black");
-              });
-            }
-          }
-        });
-      });
-    </script>
   </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("navbar");
+        var logo = document.getElementById("navbar-logo");
+        if (navbar) {
+          var links = navbar.querySelectorAll("a");
+
+          if (window.scrollY > 0) {
+            // Cambiar estilo cuando se hace scroll
+            navbar.classList.add("bg-white");
+            navbar.classList.remove("bg-transparent");
+            links.forEach((link) => {
+              link.classList.add("text-black");
+              link.classList.remove("text-white");
+            });
+            logo?.setAttribute("src", "/LOGO_NEGRO.png");
+          } else {
+            // Cambiar de vuelta cuando no hay scroll
+            navbar.classList.add("bg-transparent");
+            navbar.classList.remove("bg-white");
+            links.forEach((link) => {
+              link.classList.add("text-white");
+              link.classList.remove("text-black");
+            });
+            logo?.setAttribute("src", "/LOGO_BLANCO.png");
+          }
+        }
+      });
+    });
+  </script>
 </html>

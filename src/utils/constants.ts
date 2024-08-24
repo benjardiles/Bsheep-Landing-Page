@@ -63,32 +63,13 @@ export const products = [
         imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
-    {
-        id: 9,
-        title: "Producto 8",
-        description: "Descripción del producto 8",
-        price: "$25.00",
-        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
-        sizes: ["S", "M", "L"],
-    },
-    {
-        id: 10,
-        title: "Producto 9",
-        description: "Descripción del producto 9",
-        price: "$25.00",
-        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
-        sizes: ["S", "M", "L"],
-    },
     // Otros productos...
 ];
 
 export const secciones = [
-    { name: "INICIO", url: "/#", label: "Inicio" },
+    { name: "INICIO", url: "/#rusel", label: "Inicio" },
     { name: "PRODUCTOS", url: "/#products", label: "Productos" },
-    {
-        name: "CONTACTO",
-        label: "Contacto",
-        url: "mailto:bsheep.cl@gmail.com",
-    },
     { name: "GUIA DE TALLAS", url: "#" },
+    { name: "CONTACTO", url: "mailto:bsheep.cl@gmail.com", label: "Contacto", },
+
 ];
