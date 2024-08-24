@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import { ViewTransitions } from "astro:transitions";
+import "@fontsource/oswald/500.css";
 
 interface Props {
 	title: string;
@@ -29,7 +30,7 @@ const { title } = Astro.props;
 
 	<style is:global>
 		html {
-			font-family: system-ui, sans-serif;
+			font-family: "Oswald";
 			background: #ffffff;
 			color-scheme: light dark;
 			scroll-behavior: smooth;
@@ -41,6 +42,20 @@ const { title } = Astro.props;
 			html {
 				scroll-behavior: auto;
 			}
+		}
+		@font-face {
+			font-family: "Futura-Black Bold";
+			src: url("/fonts/Futura-Black Bold.ttf") format("TTF");
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: "BlackHanSans-Regular";
+			src: url("/fonts/BlackHanSans-Regular.ttf") format("ttf");
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
 		}
 	</style>
 </html>
