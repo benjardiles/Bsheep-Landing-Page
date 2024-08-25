@@ -1,14 +1,7 @@
 export const products = [
+
     {
         id: 1,
-        title: "Polera Blanca",
-        description: "Polera manga corta color blanco, hecha de algodón 100%.",
-        price: "$11.990",
-        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
-        sizes: ["S", "M", "L"],
-    },
-    {
-        id: 2,
         title: "Polera Negra",
         description: "Polera manga corta color negro, hecha de algodon 100%",
         price: "$11.990",
@@ -16,27 +9,35 @@ export const products = [
         sizes: ["S", "M", "L"],
     },
     {
+        id: 2,
+        title: "Polera Blanca",
+        description: "Polera manga corta color blanco, hecha de algodón 100%.",
+        price: "$11.990",
+        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
         id: 3,
+        title: "Polera Cafe Oversize",
+        description: "Polera manga corta oversize hecha 100% algodon",
+        price: "$14.990",
+        imageUrl: "/FotosPoleras/Foto Polera Cafe.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 4,
         title: "Poleron Oversize Verde Botella",
-        description: "Poleron Oversize 100% algodon ",
+        description: "Poleron oversize 100% algodon ",
         price: "$30.000",
         imageUrl: "/FotosPolerones/1.jpg",
         sizes: ["S", "M", "L"],
     },
     {
-        id: 4,
+        id: 5,
         title: "Poleron Oversize Negro",
-        description: "Poleron Oversize 100% algodon ",
+        description: "Poleron Oversize hecho 100% algodon ",
         price: "$30.000",
         imageUrl: "/FotosPolerones/2.jpg",
-        sizes: ["S", "M", "L"],
-    },
-    {
-        id: 5,
-        title: "Producto 4",
-        description: "Descripción del producto 4",
-        price: "$25.00",
-        imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
