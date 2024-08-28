@@ -1,4 +1,4 @@
-export const products = [
+export const products_poleras = [
 
     {
         id: 1,
@@ -24,22 +24,7 @@ export const products = [
         imageUrl: "/FotosPoleras/Foto Polera Cafe.jpg",
         sizes: ["S", "M", "L"],
     },
-    {
-        id: 4,
-        title: "Poleron Oversize Verde Botella",
-        description: "Poleron oversize 100% algodon ",
-        price: "$30.000",
-        imageUrl: "/FotosPolerones/1.jpg",
-        sizes: ["S", "M", "L"],
-    },
-    {
-        id: 5,
-        title: "Poleron Oversize Negro",
-        description: "Poleron Oversize hecho 100% algodon ",
-        price: "$30.000",
-        imageUrl: "/FotosPolerones/2.jpg",
-        sizes: ["S", "M", "L"],
-    },
+    
     {
         id: 6,
         title: "Producto 5",
@@ -66,7 +51,24 @@ export const products = [
     },
     // Otros productos...
 ];
-
+export const products_polerones = [
+    {
+        id: 4,
+        title: "Poleron Oversize Verde Botella",
+        description: "Poleron oversize 100% algodon ",
+        price: "$30.000",
+        imageUrl: "/FotosPolerones/1.jpg",
+        sizes: ["S", "M", "L"],
+    },
+    {
+        id: 5,
+        title: "Poleron Oversize Negro",
+        description: "Poleron Oversize hecho 100% algodon ",
+        price: "$30.000",
+        imageUrl: "/FotosPolerones/2.jpg",
+        sizes: ["S", "M", "L"],
+    },
+]
 export const secciones = [
     { name: "INICIO", url: "/#rusel", label: "Inicio" },
     { name: "PRODUCTOS", url: "/#products", label: "Productos" },
