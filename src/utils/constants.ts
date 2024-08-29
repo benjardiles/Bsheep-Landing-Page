@@ -1,8 +1,9 @@
-export const products_poleras = [
 
+export const products_poleras = [
     {
         id: 1,
         title: "Polera Negra",
+        category: "Polera",
         description: "Polera manga corta color negro, hecha de algodon 100%",
         price: "$11.990",
         imageUrl: "/FotosPoleras/PoleraNegra.jpg",
@@ -28,22 +29,25 @@ export const products_poleras = [
     {
         id: 6,
         title: "Producto 5",
+        category: "Poleron",
         description: "Descripción del producto 5",
         price: "$25.00",
         imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
-        id: 7,
+        id: '123',
         title: "Producto 6",
+        category: "Polera",
         description: "Descripción del producto 6",
         price: "$25.00",
         imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
         sizes: ["S", "M", "L"],
     },
     {
-        id: 8,
+        id: '123',
         title: "Producto 7",
+        category: "Polera",
         description: "Descripción del producto 7",
         price: "$25.00",
         imageUrl: "/FotosPoleras/Foto Polera Blanca.jpg",
