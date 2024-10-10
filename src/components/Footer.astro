@@ -8,7 +8,8 @@ const currentYear = new Date().getFullYear();
 <footer class="p-4 bg-white sm:p-6 dark:bg-black">
     <div class="mx-auto max-w-screen-xl">
         <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
+            <!-- Logo Section -->
+            <div class="mb-6 md:mb-0 flex justify-center md:justify-start">
                 <a
                     href="https://www.instagram.com/bsheep.cl/"
                     class="flex items-center"
@@ -17,90 +18,64 @@ const currentYear = new Date().getFullYear();
                 >
                     <img
                         src="/LOGO_BLANCO.png"
-                        class="mr-3 h-28"
+                        class="mr-3 h-28 w-auto"
                         alt="FlowBite Logo"
                     />
                 </a>
             </div>
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 pr-20">
+            <!-- Grid Section for Links -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 pr-0 sm:pr-20">
                 <div>
-                    <h2
-                        class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-                    >
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                         Secciones
                     </h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="/#rusel" class="hover:underline"
-                                >Galeria de fotos</a
-                            >
+                            <a href="/#rusel" class="hover:underline">Galería de fotos</a>
                         </li>
                         <li>
-                            <a href="/#products" class="hover:underline"
-                                >Productos</a
-                            >
+                            <a href="/#products" class="hover:underline">Productos</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2
-                        class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-                    >
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                         Productos
                     </h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="/#t-shirt" class="flex hover:underline"
-                                >Poleras</a
-                            >
+                            <a href="/#t-shirt" class="hover:underline">Poleras</a>
                         </li>
                         <li>
-                            <a href="/#sweatshirt" class="flex hover:underline"
-                                >Polerones</a
-                            >
+                            <a href="/#sweatshirt" class="hover:underline">Polerones</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2
-                        class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-                    >
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                         Legal
                     </h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline"
-                                >Privacy Policy</a
-                            >
+                            <a href="#" class="hover:underline">Política de privacidad</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:underline"
-                                >Terms &amp; Conditions</a
-                            >
+                            <a href="#" class="hover:underline">Términos y condiciones</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <hr
-            class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
-        />
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span
-                class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-                >© {currentYear}
-                <a
-                    href="https://www.instagram.com/bsheep.cl/"
-                    class="hover:underline">Bsheep™</a
-                >. Todos los derechos son reservados.
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © {currentYear}
+                <a href="https://www.instagram.com/bsheep.cl/" class="hover:underline">Bsheep™</a>. Todos los derechos son reservados.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                 <IconLinkFooter link="https://www.instagram.com/bsheep.cl/">
                     <InstagramIcon class="size-8" />
                 </IconLinkFooter>
-                <!-- <IconLinkFooter link="https://www.instagram.com/bsheep.cl/">
-                    <TwitterIcon class="size-8" />
-                </IconLinkFooter> -->
             </div>
         </div>
     </div>
