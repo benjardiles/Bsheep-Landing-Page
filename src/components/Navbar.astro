@@ -48,19 +48,7 @@ import { secciones } from "../utils/constants";
               d="M1 1h15M1 7h15M1 13h15"></path>
           </svg>
         </button>
-        <script>
-          function handleClick() {
-            document
-              .getElementById("navbar-resp-default")
-              ?.classList.toggle("hidden");
-            document
-              .getElementById("navbar-resp-default")
-              ?.classList.toggle("bg-transparent");
-          }
-          document
-            .getElementById("button-responsive-nav")
-            ?.addEventListener("click", handleClick);
-        </script>
+
         <div class="hidden w-full md:block md:w-auto" id="navbar-resp-default">
           <ul
             class="font-medium flex flex-col items-center justify-center
@@ -85,36 +73,70 @@ import { secciones } from "../utils/constants";
         </div>
       </div>
     </nav>
-  </body>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      window.addEventListener("scroll", function () {
-        var navbar = document.getElementById("navbar");
-        var logo = document.getElementById("navbar-logo");
-        if (navbar) {
-          var links = navbar.querySelectorAll("a");
 
-          if (window.scrollY > 0) {
-            // Cambiar estilo cuando se hace scroll
-            navbar.classList.add("bg-white");
-            navbar.classList.remove("bg-transparent");
-            links.forEach((link) => {
-              link.classList.add("text-black");
-              link.classList.remove("text-white");
-            });
-            logo?.setAttribute("src", "/LOGO_NEGRO.png");
-          } else {
-            // Cambiar de vuelta cuando no hay scroll
+    <!-- Script para manejar el fondo del navbar en modo hamburguesa y con scroll -->
+    <script>
+      // Manejo del click en el botón hamburguesa
+      function handleClick() {
+        const navbarResp = document.getElementById("navbar-resp-default");
+        const navbar = document.getElementById("navbar");
+
+        navbarResp?.classList.toggle("hidden");
+        
+        // Asegurar que el fondo es blanco cuando el menú hamburguesa está abierto
+        if (!navbarResp.classList.contains("hidden")) {
+          navbar.classList.add("bg-white", "menu-open");
+          navbar.classList.remove("bg-transparent");
+        } else {
+          // Mantenemos el fondo blanco si el menú hamburguesa está cerrado, pero
+          // solo si no se ha hecho scroll (ver manejo en scroll event más abajo)
+          if (window.scrollY === 0) {
+            navbar.classList.remove("menu-open");
             navbar.classList.add("bg-transparent");
             navbar.classList.remove("bg-white");
-            links.forEach((link) => {
-              link.classList.add("text-white");
-              link.classList.remove("text-black");
-            });
-            logo?.setAttribute("src", "/LOGO_BLANCO.png");
           }
         }
+      }
+
+      document
+        .getElementById("button-responsive-nav")
+        ?.addEventListener("click", handleClick);
+
+      // Manejo del scroll para cambiar el fondo cuando no está en modo hamburguesa
+      document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("scroll", function () {
+          var navbar = document.getElementById("navbar");
+          var logo = document.getElementById("navbar-logo");
+          var navbarResp = document.getElementById("navbar-resp-default");
+          
+          // Solo cambiar el estilo si el menú hamburguesa está oculto
+          if (navbar && navbarResp.classList.contains("hidden")) {
+            var links = navbar.querySelectorAll("a");
+
+            if (window.scrollY > 0) {
+              // Cambiar estilo cuando se hace scroll
+              navbar.classList.add("bg-white");
+              navbar.classList.remove("bg-transparent");
+              links.forEach((link) => {
+                link.classList.add("text-black");
+                link.classList.remove("text-white");
+              });
+              logo?.setAttribute("src", "/LOGO_NEGRO.png");
+            } else {
+              // Cambiar de vuelta cuando no hay scroll
+              if (!navbar.classList.contains("menu-open")) {
+                navbar.classList.add("bg-transparent");
+                navbar.classList.remove("bg-white");
+              }
+              links.forEach((link) => {
+                link.classList.add("text-white");
+                link.classList.remove("text-black");
+              });
+              logo?.setAttribute("src", "/LOGO_BLANCO.png");
+            }
+          }
+        });
       });
-    });
-  </script>
+    </script>
+  </body>
 </html>
