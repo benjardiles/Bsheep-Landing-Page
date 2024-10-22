@@ -1,41 +1,102 @@
----
-import { secciones } from "../utils/constants";
----
-
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar Example</title>
+    <style>
+      /* Estilos para el menú hamburguesa */
+      #navbar-hamburger {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 50;
+        background-color: white;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      #navbar-hamburger.show {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #navbar-hamburger ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      #navbar-hamburger li {
+        list-style: none;
+      }
+
+      #navbar-hamburger a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+
+      #navbar-hamburger a:hover {
+        color: red;
+      }
+
+      /* Estilos para la navbar normal */
+      #navbar {
+        transition: background-color 0.3s ease;
+      }
+
+      /* Cambia el color de los enlaces en la navbar según el fondo */
+      #navbar a {
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      #navbar.bg-white a {
+        color: black; /* Enlaces negros cuando la navbar es blanca */
+      }
+
+      #navbar.bg-transparent a {
+        color: white; /* Enlaces blancos cuando la navbar es transparente */
+      }
+
+      /* Cambiar el logo según el fondo de la navbar */
+      #navbar.bg-white #navbar-logo {
+        content: url('/LOGO_NEGRO.png');
+      }
+
+      #navbar.bg-transparent #navbar-logo {
+        content: url('/LOGO_BLANCO.png');
+      }
+    </style>
   </head>
   <body>
     <nav
       id="navbar"
-      class="fixed top-0 w-full bg-transparent z-50 transition-all duration-700 p-1 pr-3"
+      class="fixed top-0 w-full bg-transparent z-50 transition-all duration-700 p-4"
     >
-      <div class="w-full flex flex-wrap items-center justify-between p-15">
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
-            id="navbar-logo"
-            src="/LOGO_BLANCO.png"
-            class="h-20"
-            alt="Bsheep Logo"
-          />
+      <div class="w-full flex items-center justify-between">
+        <a href="#" class="flex items-center space-x-3">
+          <img id="navbar-logo" src="/LOGO_BLANCO.png" class="h-10" alt="Logo" />
         </a>
+
+        <!-- Botón hamburguesa (solo para pantallas pequeñas) -->
         <button
           id="button-responsive-nav"
-          data-collapse-toggle="navbar-default"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm
-           text-gray-500 rounded-lg md:hidden
-           focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-controls="navbar-default"
+          class="inline-flex items-center p-2 w-10 h-10 text-white rounded-lg md:hidden focus:outline-none"
+          aria-controls="navbar-hamburger"
           aria-expanded="false"
         >
-          <span class="sr-only">Open main menu</span>
           <svg
+            id="icon-hamburger"
             class="w-5 h-5"
-            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 17 14"
@@ -45,95 +106,107 @@ import { secciones } from "../utils/constants";
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"></path>
+              d="M1 1h15M1 7h15M1 13h15"
+            ></path>
           </svg>
         </button>
 
-        <div class="hidden w-full md:block md:w-auto" id="navbar-resp-default">
-          <ul
-            class="font-medium flex flex-col items-center justify-center
-            p-4 md:p-0 mt-4 xl:border xl:border-gray-100
-            rounded-lg bg-transparent md:flex-row md:space-x-8
-            rtl:space-x-reverse md:mt-0 md:border-0"
+        <!-- Navbar normal para pantallas grandes -->
+        <div class="hidden md:flex space-x-8">
+          <ul id="navbar-links" class="flex space-x-6"></ul>
+        </div>
+
+        <!-- Navbar en modo hamburguesa (solo para pantallas pequeñas) -->
+        <div
+          class="fixed inset-0 bg-white z-50 items-center justify-center md:hidden"
+          id="navbar-hamburger"
+        >
+          <button
+            id="close-hamburger"
+            class="absolute top-4 right-4 p-2 bg-red-500 text-white rounded-lg"
           >
-            {
-              secciones.map((seccion) => (
-                <li>
-                  <a
-                    href={seccion.url}
-                    class="block py-2 px-3 text-white rounded md:p-0 
-                    hover:bg-gray-300 hover:underline"
-                  >
-                    {seccion.name}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+            Cerrar
+          </button>
+          <ul id="navbar-hamburger-links" class="flex flex-col items-center space-y-8"></ul>
         </div>
       </div>
     </nav>
 
-    <!-- Script para manejar el fondo del navbar en modo hamburguesa y con scroll -->
     <script>
-      // Manejo del click en el botón hamburguesa
-      function handleClick() {
-        const navbarResp = document.getElementById("navbar-resp-default");
-        const navbar = document.getElementById("navbar");
+      const secciones = [
+        { name: "INICIO", url: "/#rusel", label: "Inicio" },
+        { name: "PRODUCTOS", url: "/#products", label: "Productos" },
+        { name: "GUIA DE TALLAS", url: "#rusel", label: "Guía de tallas" },
+        { name: "CONTACTO", url: "mailto:bsheep.cl@gmail.com", label: "Contacto" },
+      ];
 
-        navbarResp?.classList.toggle("hidden");
-        
-        // Asegurar que el fondo es blanco cuando el menú hamburguesa está abierto
-        if (!navbarResp.classList.contains("hidden")) {
-          navbar.classList.add("bg-white", "menu-open");
-          navbar.classList.remove("bg-transparent");
+      function renderNavbarLinks() {
+        const navbarLinks = document.getElementById("navbar-links");
+        const navbarHamburgerLinks = document.getElementById("navbar-hamburger-links");
+
+        secciones.forEach((seccion) => {
+          const liElement = document.createElement("li");
+          const liHamburgerElement = document.createElement("li");
+
+          // Crear el enlace para la navbar normal
+          liElement.innerHTML = `<a href="${seccion.url}" class="hover:underline py-2">${seccion.label}</a>`;
+          navbarLinks.appendChild(liElement);
+
+          // Crear el enlace para el menú hamburguesa
+          liHamburgerElement.innerHTML = `<a href="${seccion.url}" class="text-black text-2xl hover:underline py-2 px-4">${seccion.label}</a>`;
+          navbarHamburgerLinks.appendChild(liHamburgerElement);
+        });
+      }
+
+      function handleClick() {
+        const navbarHamburger = document.getElementById("navbar-hamburger");
+        const iconHamburger = document.getElementById("icon-hamburger");
+
+        navbarHamburger.classList.toggle("show");
+
+        if (navbarHamburger.classList.contains("show")) {
+          document.body.classList.add("overflow-hidden");
+          iconHamburger.innerHTML = `<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
         } else {
-          // Mantenemos el fondo blanco si el menú hamburguesa está cerrado, pero
-          // solo si no se ha hecho scroll (ver manejo en scroll event más abajo)
-          if (window.scrollY === 0) {
-            navbar.classList.remove("menu-open");
-            navbar.classList.add("bg-transparent");
-            navbar.classList.remove("bg-white");
-          }
+          document.body.classList.remove("overflow-hidden");
+          iconHamburger.innerHTML = `<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path></svg>`;
         }
       }
 
-      document
-        .getElementById("button-responsive-nav")
-        ?.addEventListener("click", handleClick);
+      function closeHamburgerMenu() {
+        const navbarHamburger = document.getElementById("navbar-hamburger");
+        const iconHamburger = document.getElementById("icon-hamburger");
 
-      // Manejo del scroll para cambiar el fondo cuando no está en modo hamburguesa
+        navbarHamburger.classList.remove("show");
+        document.body.classList.remove("overflow-hidden");
+
+        iconHamburger.innerHTML = `<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path></svg>`;
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
-        window.addEventListener("scroll", function () {
-          var navbar = document.getElementById("navbar");
-          var logo = document.getElementById("navbar-logo");
-          var navbarResp = document.getElementById("navbar-resp-default");
-          
-          // Solo cambiar el estilo si el menú hamburguesa está oculto
-          if (navbar && navbarResp.classList.contains("hidden")) {
-            var links = navbar.querySelectorAll("a");
+        const buttonResponsiveNav = document.getElementById("button-responsive-nav");
+        const closeButton = document.getElementById("close-hamburger");
 
-            if (window.scrollY > 0) {
-              // Cambiar estilo cuando se hace scroll
-              navbar.classList.add("bg-white");
-              navbar.classList.remove("bg-transparent");
-              links.forEach((link) => {
-                link.classList.add("text-black");
-                link.classList.remove("text-white");
-              });
-              logo?.setAttribute("src", "/LOGO_NEGRO.png");
-            } else {
-              // Cambiar de vuelta cuando no hay scroll
-              if (!navbar.classList.contains("menu-open")) {
-                navbar.classList.add("bg-transparent");
-                navbar.classList.remove("bg-white");
-              }
-              links.forEach((link) => {
-                link.classList.add("text-white");
-                link.classList.remove("text-black");
-              });
-              logo?.setAttribute("src", "/LOGO_BLANCO.png");
-            }
+        renderNavbarLinks();
+
+        buttonResponsiveNav.addEventListener("click", handleClick);
+        closeButton.addEventListener("click", closeHamburgerMenu);
+
+        document.querySelectorAll("#navbar-hamburger a").forEach((link) => {
+          link.addEventListener("click", function () {
+            closeHamburgerMenu();
+          });
+        });
+
+        window.addEventListener("scroll", function () {
+          const navbar = document.getElementById("navbar");
+
+          if (window.scrollY > 0) {
+            navbar.classList.add("bg-white");
+            navbar.classList.remove("bg-transparent");
+          } else {
+            navbar.classList.add("bg-transparent");
+            navbar.classList.remove("bg-white");
           }
         });
       });
